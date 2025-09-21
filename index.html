@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen overflow-x-hidden">
+    <!-- Vanta.js Background -->
+    <div id="vanta-bg" class="fixed inset-0 -z-10"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-card fixed top-0 left-0 right-0 mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold gradient-text">Portfolio</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="hover:text-purple-400 transition">Home</a>
+            <a href="#about" class="hover:text-purple-400 transition">About</a>
+            <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
+            <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
+        </div>
+        <button class="md:hidden" id="menu-btn">
+            <i data-feather="menu"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="glass-card fixed top-20 right-6 hidden w-48 p-4 rounded-lg shadow-lg">
+        <div class="flex flex-col space-y-3">
+            <a href="#home" class="hover:text-purple-400 transition">Home</a>
+            <a href="#about" class="hover:text-purple-400 transition">About</a>
+            <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
+            <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-6">
+        <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">Hi, I'm <span class="text-white">Alex</span></h1>
+            <h2 class="text-2xl md:text-3xl mb-8 text-purple-300">Creative Developer & Designer</h2>
+            <p class="text-lg md:text-xl mb-10 text-gray-300 max-w-2xl mx-auto">
+                I build beautiful, interactive digital experiences that engage users and drive results.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#projects" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full hover:opacity-90 transition hover-scale">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-8 py-3 border border-purple-400 text-purple-400 rounded-full hover:bg-purple-900/30 transition hover-scale">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center gradient-text" data-aos="fade-up">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3" data-aos="fade-right">
+                    <div class="glass-card p-1 rounded-full w-64 h-64 mx-auto">
+                        <img src="http://static.photos/technology/640x360/42" alt="Profile" class="w-full h-full object-cover rounded-full">
+                    </div>
+                </div>
+                <div class="md:w-2/3" data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold mb-4">Who I Am</h3>
+                    <p class="text-gray-300 mb-6">
+                        I'm a passionate developer and designer with 5+ years of experience creating digital experiences. 
+                        I specialize in front-end development, UI/UX design, and interactive web applications.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <i data-feather="code" class="mr-2 text-purple-400"></i>
+                                <h4 class="font-medium">Development</h4>
+                            </div>
+                            <p class="text-sm text-gray-300">React, Vue, JavaScript, HTML/CSS</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <i data-feather="layout" class="mr-2 text-purple-400"></i>
+                                <h4 class="font-medium">Design</h4>
+                            </div>
+                            <p class="text-sm text-gray-300">UI/UX, Figma, Adobe XD, Prototyping</p>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition">
+                        Download Resume <i data-feather="download" class="ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gray-800/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center gradient-text" data-aos="fade-up">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card p-6 rounded-xl hover-scale" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-4 overflow-hidden rounded-lg">
+                        <img src="http://static.photos/technology/640x360/101" alt="Project 1" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
+                    <p class="text-gray-300 mb-4">A modern e-commerce solution with React and Node.js backend.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2 py-1 bg-purple-900/50 rounded-full">React</span>
+                        <span class="text-xs px-2 py-1 bg-purple-900/50 rounded-full">Node.js</span>
+                        <span class="text-xs px-2 py-1 bg-purple-900/50 rounded-full">MongoDB</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="glass-card p-6 rounded-xl hover-scale" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-4 overflow-hidden rounded-lg">
+                        <img src="http://static.photos/technology/640x360/102" alt="Project 2" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Health Dashboard</h3>
+                    <p class="text-gray-300 mb-4">Interactive data visualization for health metrics.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2 py-1 bg-purple-900/50 rounded-full">Vue.js</span>
+                        <span class="text-xs px-2 py-1 bg-purple-900/50 rounded-full">D3.js</span>
+                        <span class="text-xs px-2 py-1 bg-purple-900/50 rounded-full">Firebase</span>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="glass-card p-6 rounded-xl hover-scale" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-4 overflow-hidden rounded-lg">
+                        <img src="http://static.photos/technology/640x360/103" alt="Project 3" class="w-full h-48 object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Travel App</h3>
+                    <p class="text-gray-300 mb-4">Mobile-first travel planning application with real-time updates.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2 py-1 bg-purple-900/50 rounded-full">Flutter</span>
+                        <span class="text-xs px-2 py-1 bg-purple-900/50 rounded-full">GraphQL</span>
+                        <span class="text-xs px-2 py-1 bg-purple-900/50 rounded-full">AWS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="px-6 py-3 border border-purple-400 text-purple-400 rounded-full hover:bg-purple-900/30 transition inline-flex items-center hover-scale">
+                    View All Projects <i data-feather="arrow-right" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 text-center gradient-text" data-aos="fade-up">Get In Touch</h2>
+            <div class="glass-card p-8 rounded-xl" data-aos="fade-up">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Let me know how I can help you">
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 text-sm font-medium">Your Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-500 rounded-full hover:opacity-90 transition hover-scale">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center gap-8 mt-16 text-center" data-aos="fade-up">
+                <div class="glass-card p-6 rounded-xl w-full md:w-1/3 hover-scale">
+                    <i data-feather="mail" class="w-10 h-10 mx-auto text-purple-400 mb-4"></i>
+                    <h3 class="font-medium mb-2">Email</h3>
+                    <p class="text-gray-300">hello@example.com</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl w-full md:w-1/3 hover-scale">
+                    <i data-feather="phone" class="w-10 h-10 mx-auto text-purple-400 mb-4"></i>
+                    <h3 class="font-medium mb-2">Phone</h3>
+                    <p class="text-gray-300">+1 (555) 123-4567</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl w-full md:w-1/3 hover-scale">
+                    <i data-feather="map-pin" class="w-10 h-10 mx-auto text-purple-400 mb-4"></i>
+                    <h3 class="font-medium mb-2">Location</h3>
+                    <p class="text-gray-300">San Francisco, CA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">Portfolio</a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-purple-400 transition">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-purple-400 transition">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-purple-400 transition">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-purple-400 transition">
+                        <i data-feather="instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 My Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Vanta.js
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x5e17eb,
+            backgroundColor: 0x111827,
+            size: 0.8
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
